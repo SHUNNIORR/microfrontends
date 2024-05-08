@@ -1,3 +1,4 @@
+import { AlbumCardModule } from './../../../microfrontend1/src/app/UI/view-models/album-card/album-card.module';
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -23,6 +24,16 @@ const routes: Routes = [
         remoteEntry: MFE_APP_URL,
         exposedModule: "./RegistrationModule",
       }).then(m => m.RegistrationModule).catch(err => console.log(err));
+    }
+  },
+  {
+    path: 'album', 
+    loadChildren: () => {
+      return loadRemoteModule({
+        type: "module",
+        remoteEntry: MFE_APP_URL,
+        exposedModule: "./AlbumCardModule",
+      }).then(m => m.AlbumCardModule).catch(err => console.log(err));
     }
   }
 ];

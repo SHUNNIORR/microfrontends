@@ -34,6 +34,7 @@ module.exports = {
         exposes: {
             './HelloComponent': './projects/microfrontend1/src/app/hello/hello.component.ts',
             './RegistrationModule': './projects/microfrontend1/src/app/registration/registration.module.ts',
+            './AlbumCardModule': './projects/microfrontend1/src/app/UI/view-models/album-card/album-card.module.ts'
         },        
         
         // For hosts (please adjust)
